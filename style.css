@@ -13,7 +13,20 @@
     border-style: inset;
     border-color: #fff;
     margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
+.digits {
+    color: red;
+    background-color: black;
+    border-width: 1px;
+    border-style: inset;
+    border-color: #fff;
+    margin: 10px;
+    font-family: monospace;
+    font-size: 3em;
 }
 
 .grid {
