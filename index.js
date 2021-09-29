@@ -3,8 +3,10 @@ document.addEventListener('DOMContentLoaded', () => {
     let width = 10
     let bombAmount = 20
     let flags = 0
+    let currentTime = 999
     let squares = []
     let isGameOver = false
+    let timerID
     const bombCounter = document.querySelector('.bomb-count')
     bombCounter.innerHTML = bombAmount
 
@@ -84,9 +86,19 @@ document.addEventListener('DOMContentLoaded', () => {
             updateBombCounter()
         }
     }
+
+    // timer
+    function updateTimer() {
+        currentTime--
+        const timer = document.querySelector('.timer')
+        timer.innerHTML = currentTime
+    }
     
     // click on square actions
     function click(square) {
+        if (timerID === undefined) {
+            timerID = setInterval(updateTimer, 1000)
+        }
         let currentId = square.id
         if (isGameOver) return
         if (square.classList.contains('checked') || square.classList.contains('flag')) return
@@ -174,6 +186,7 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         const face = document.querySelector('.face')
         face.innerHTML = '😵'
+        clearInterval(timerID)
     }
 
     // check for win
@@ -188,6 +201,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const face = document.querySelector('.face')
                 face.innerHTML = '😎'
                 isGameOver = true
+                clearInterval(timerID)
             }
         }
     }

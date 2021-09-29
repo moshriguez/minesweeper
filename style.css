@@ -27,6 +27,19 @@
     margin: 10px;
     font-family: monospace;
     font-size: 3em;
+    width: 71px;
+    text-align: end;
+}
+
+.face {
+    height: 34px;
+    width: 34px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-width: 3px;
+    border-style: outset;
+    border-color: #fff;
 }
 
 .grid {
