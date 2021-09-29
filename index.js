@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let flags = 0
     let squares = []
     let isGameOver = false
+    const bombCounter = document.querySelector('.bomb-count')
+    bombCounter.innerHTML = bombAmount
 
     // create Board
     function createBoard() {
@@ -61,6 +63,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     createBoard()
 
+    function updateBombCounter() {
+        bombCounter.innerHTML = bombAmount - flags
+    }
+
     // add flag with right click
     function addFlag(square) {
         if (isGameOver) return
@@ -75,6 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 square.innerHTML = ''
                 flags--
             }
+            updateBombCounter()
         }
     }
     

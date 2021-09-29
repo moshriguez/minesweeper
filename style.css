@@ -1,5 +1,4 @@
 .game {
-    padding: 10px;
     background-color: #c6c6c6;
     margin: auto;
     width: fit-content;
@@ -8,13 +7,22 @@
     border-color: #fff;
 }
 
+.controls {
+    height: 75px;
+    border-width: 5px;
+    border-style: inset;
+    border-color: #fff;
+    margin: 10px;
+
+}
+
 .grid {
     height: 400px;
     width: 400px;
     display: flex;
     flex-wrap: wrap;
     background-color: #c6c6c6;
-    margin: auto;
+    margin: 10px;
     border-width: 5px;
     border-style: inset;
     border-color: #fff;
