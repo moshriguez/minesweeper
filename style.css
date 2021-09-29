@@ -1,21 +1,43 @@
+.game {
+    padding: 10px;
+    background-color: #c6c6c6;
+    margin: auto;
+    width: fit-content;
+    border-width: 5px;
+    border-style: outset;
+    border-color: #fff;
+}
+
 .grid {
     height: 400px;
     width: 400px;
     display: flex;
     flex-wrap: wrap;
-    background-color: grey;
-
+    background-color: #c6c6c6;
+    margin: auto;
+    border-width: 5px;
+    border-style: inset;
+    border-color: #fff;
 }
 
 .grid div {
-    height: 40px;
-    width: 40px;
+    height: 34px;
+    width: 34px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-width: 3px;
+    border-style: outset;
+    border-color: #fff;
 }
 
-.checked {
+.grid div.checked {
+    border: none;
+    height: 38px;
+    width: 38px;
+    border: 1px solid #808080;
+}
+
+.bomb.checked {
     background-color: red;
 }
-
-/* .bomb {
-    background-color: orange;
-} */
