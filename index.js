@@ -172,7 +172,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 square.innerHTML = '💣'
             }
         })
-        // 😵
+        const face = document.querySelector('.face')
+        face.innerHTML = '😵'
     }
 
     // check for win
@@ -184,7 +185,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             if (matches == bombAmount) {
                 console.log('you won')
-                // 😎
+                const face = document.querySelector('.face')
+                face.innerHTML = '😎'
                 isGameOver = true
             }
         }
