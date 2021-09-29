@@ -172,6 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 square.innerHTML = '💣'
             }
         })
+        // 😵
     }
 
     // check for win
@@ -183,6 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             if (matches == bombAmount) {
                 console.log('you won')
+                // 😎
                 isGameOver = true
             }
         }
