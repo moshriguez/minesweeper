@@ -7,8 +7,12 @@ document.addEventListener('DOMContentLoaded', () => {
     let squares = []
     let isGameOver = false
     let timerID
+    const smiley = document.querySelector('.face')
+    smiley.addEventListener('click', resetGame)
     const bombCounter = document.querySelector('.bomb-count')
     bombCounter.innerHTML = bombAmount
+    const timer = document.querySelector('.timer')
+
 
     // random board
     function randomBoard() {
@@ -75,6 +79,24 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     createBoard()
 
+    // reset board with smiley
+    function resetGame() {
+        const shuffledArray = randomBoard()
+        for (let i = 0; i < width*width; i++) {
+            squares[i].classList.value = shuffledArray[i]
+            squares[i].innerHTML = ''
+        }
+        addNumbers()
+        flags = 0
+        currentTime = 999
+        isGameOver = false
+        timerID = undefined  
+        smiley.innerHTML = '🙂'
+        timer.innerHTML = currentTime
+        updateBombCounter()
+        console.log(squares)
+    }
+
     function updateBombCounter() {
         bombCounter.innerHTML = bombAmount - flags
     }
@@ -100,7 +122,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // timer
     function updateTimer() {
         currentTime--
-        const timer = document.querySelector('.timer')
         timer.innerHTML = currentTime
     }
     
@@ -202,8 +223,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 square.innerHTML = '💣'
             }
         })
-        const face = document.querySelector('.face')
-        face.innerHTML = '😵'
+        smiley.innerHTML = '😵'
         clearInterval(timerID)
     }
 
@@ -216,8 +236,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             if (matches == bombAmount) {
                 console.log('you won')
-                const face = document.querySelector('.face')
-                face.innerHTML = '😎'
+                smiley.innerHTML = '😎'
                 isGameOver = true
                 clearInterval(timerID)
             }
