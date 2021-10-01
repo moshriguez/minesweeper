@@ -6,7 +6,7 @@ body {
 
 .game {
     background-color: #c6c6c6;
-    margin: auto;
+    margin: 20px auto;
     width: fit-content;
     border-width: 5px;
     border-style: outset;
